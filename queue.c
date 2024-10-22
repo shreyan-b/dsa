@@ -43,7 +43,9 @@ int main() {
   scanf("%d", &max);
   queue = (int *)malloc(max * sizeof(int));
   while (1) {
-    printf("Enter choice: ");
+    printf("Enter choice: \n");
+    printf(" 1 - enqueue \n 2 - dequeue \n 3 - display \n 4 - exit \n");
+    scanf("%d", &choice);
     scanf("%d", &choice);
     switch (choice) {
     case 1:
@@ -58,6 +60,8 @@ int main() {
     case 3:
       display();
       break;
+     case 4:
+     exit(0); 
     default:
       printf("Invalid case.\n");
       free(queue);

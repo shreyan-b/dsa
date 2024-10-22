@@ -41,7 +41,8 @@ int main() {
   scanf("%d", &max);
   stack = (int *)malloc(max * sizeof(int));
   while (1) {
-    printf("Enter choice: ");
+    printf("Enter choice: \n");
+    printf(" 1 - push \n 2 - pop \n 3 - display \n 4 - exit \n");
     scanf("%d", &choice);
     switch (choice) {
     case 1:
@@ -56,6 +57,8 @@ int main() {
     case 3:
       display();
       break;
+    case 4:
+      exit(0);  
     default:
       printf("Invalid choice.\n");
       free(stack);
