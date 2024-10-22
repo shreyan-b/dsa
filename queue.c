@@ -14,6 +14,7 @@ void enqueue(int ele) {
   }
   rear = (rear + 1) % max;
   queue[rear] = ele;
+  count++;
 }
 
 int dequeue() {
@@ -27,14 +28,21 @@ int dequeue() {
 }
 
 void display() {
-  if (count == 0) {
-    printf("Queue is empty.\n");
-    return;
+  int i,k;
+  if (count == 0)
+  {
+     printf("queue is empty");
+
   }
-  for (int i = front; i != rear; i = (i + 1) % max) {
-    printf("%d ", queue[i]);
-  }
-  printf("\n");
+  else {
+    k = front;
+    printf("queue elements are : ");
+    for ( i=0;i<count;i++) {
+        printf("%d \t",queue[i]);
+        k = (k+1)%max;
+    }
+    printf("\n");
+   }
 }
 
 int main() {
@@ -45,7 +53,6 @@ int main() {
   while (1) {
     printf("Enter choice: \n");
     printf(" 1 - enqueue \n 2 - dequeue \n 3 - display \n 4 - exit \n");
-    scanf("%d", &choice);
     scanf("%d", &choice);
     switch (choice) {
     case 1:
